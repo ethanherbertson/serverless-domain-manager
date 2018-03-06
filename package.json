@@ -27,11 +27,13 @@
   "main": "index.js",
   "bin": {},
   "scripts": {
-    "test": "node ./node_modules/istanbul/lib/cli.js cover _mocha -- -R spec && node ./node_modules/istanbul/lib/cli.js check-coverage --line 70 coverage/coverage.json",
+    "test": "node ./node_modules/istanbul/lib/cli.js cover _mocha -- --compilers js:babel-register -R spec && node ./node_modules/istanbul/lib/cli.js check-coverage --line 70 coverage/coverage.json",
     "lint": "eslint ."
   },
   "devDependencies": {
     "aws-sdk-mock": "^1.7.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
     "chai": "^3.5.0",
     "eslint": "^3.18.0",
     "eslint-config-airbnb": "^14.1.0",
